@@ -5,22 +5,23 @@ import { ROUTES } from 'Data/constants';
 
 import './index.scss';
 
-const Layout = ({ children }) => (
-  <div className="layout">
-    <header>
-      <ul>
-        <li>
-          <Link to={ROUTES.home}>Home</Link>
-        </li>
-        <li>
-          <Link to={ROUTES.about}>About Us</Link>
-        </li>
-      </ul>
-    </header>
-    {children}
-  </div>
-);
-
+function Layout({ children }) {
+  return (
+    <div className="layout">
+      <header>
+        <ul>
+          <li>
+            <Link to={ROUTES.home}>Home</Link>
+          </li>
+          <li>
+            <Link to={ROUTES.signIn}>sign in</Link>
+          </li>
+        </ul>
+      </header>
+      {children}
+    </div>
+  );
+}
 Layout.propTypes = {
   children: PropTypes.node,
 };
