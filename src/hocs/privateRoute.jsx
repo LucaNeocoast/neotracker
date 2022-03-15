@@ -8,7 +8,6 @@ export default (Component) => (
     if (!localStorage.getItem('uid')) {
       return (<Navigate to={ROUTES.signIn} />);
     }
-
     return <Component />;
   }
 );
