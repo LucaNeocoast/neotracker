@@ -1,11 +1,9 @@
 import React from 'react';
-import { ReactComponent as NeoCoastLogo } from 'Assets/neocoast-logo.svg';
 import './index.scss';
 
 function NotFound() {
   return (
     <div className="not-found">
-      <NeoCoastLogo width={300} />
       <h1>
         Oops <span role="img" aria-label="crying face">😭</span>
       </h1>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ReactComponent as Clock } from 'Assets/clock.svg';
-import { signIn } from 'Axios/Axios';
+import signIn from 'Axios/Axios';
 import './index.scss';
 
 function SignIn() {

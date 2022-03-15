@@ -1,17 +1,20 @@
 import React from 'react';
-import { ReactComponent as NeoCoastLogo } from 'Assets/neocoast-logo.svg';
+import { ReactComponent as ClockDark } from 'Assets/clockDark.svg';
+
 import './index.scss';
 
 function Home() {
   return (
     <div className="home">
-      <NeoCoastLogo width={300} />
-      <h1>
-        Welcome to the Home page of your React App
-      </h1>
-      <h5>
-        Boilerplate made with <span role="img" aria-label="love">♥️</span> by <a href="https://www.neocoast.com" target="_blank" rel="nofollow">NeoCoast</a>
-      </h5>
+      <div className="sidebar">
+        <ClockDark className="sidebar__clock" />
+        <button type="submit" className="sidebar__button">
+          Timer
+        </button>
+        <button type="submit" className="sidebar__button">
+          Reports
+        </button>
+      </div>
     </div>
   );
 }
