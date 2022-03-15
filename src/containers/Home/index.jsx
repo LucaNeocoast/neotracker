@@ -1,5 +1,7 @@
 import React from 'react';
 import { ReactComponent as NeoCoastLogo } from 'Assets/neocoast-logo.svg';
+import privateRoute from 'Hocs/privateRoute';
+
 import './index.scss';
 
 function Home() {
@@ -16,4 +18,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default privateRoute(Home);
