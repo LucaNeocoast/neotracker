@@ -5,23 +5,21 @@ import {
   Routes,
 } from 'react-router-dom';
 import { ROUTES } from 'Data/constants';
-import Layout from 'Components/Layout';
 import Home from 'Containers/Home';
-import AboutUs from 'Containers/AboutUs';
+import SignIn from 'Containers/SignIn';
 import NotFound from 'Containers/NotFound';
 
 import './index.scss';
 
-const App = () => (
-  <Router>
-    <Layout>
+function App() {
+  return (
+    <Router>
       <Routes>
-        <Route exact path={ROUTES.home} component={Home} />
-        <Route exact path={ROUTES.about} component={AboutUs} />
-        <Route component={NotFound} />
+        <Route exact path={ROUTES.home} element={<Home />} />
+        <Route exact path={ROUTES.signIn} element={<SignIn />} />
+        <Route element={NotFound} />
       </Routes>
-    </Layout>
-  </Router>
-);
-
+    </Router>
+  );
+}
 export default App;
