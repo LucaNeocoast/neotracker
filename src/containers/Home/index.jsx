@@ -5,6 +5,7 @@ import Timer from 'Components/Timer';
 import privateRoute from 'Hocs/privateRoute';
 
 import { ReactComponent as ClockDark } from 'Assets/clockDark.svg';
+import { ReactComponent as Exit } from 'Assets/exit.svg';
 
 import './index.scss';
 
@@ -33,6 +34,10 @@ function Home() {
         <button type="submit" className={`sidebar__button ${reports}`} onClick={reportsHandler}>
           Report
         </button>
+        <div className="sidebar__empty"></div>
+        <div className="sidebar__logOut">
+          Log out <Exit />
+        </div>
       </div>
       <div className="home__content">
         {show}
