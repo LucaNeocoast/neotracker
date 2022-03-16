@@ -65,7 +65,18 @@ body {
     animation-duration: 0.8s;
     animation-name: desactive;
   }
+
+  &__empty{
+    height: 65%;
+  }
+
+  &__logOut{
+    color: $white;
+    font-family: $Roboto;
+    font-size: 20px;
+  }
 }
+
 @keyframes active {
   from {
     background-color: $background_sidebar;
