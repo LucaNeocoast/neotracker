@@ -10,28 +10,28 @@ import './index.scss';
 
 function Home() {
   const [show, setShow] = useState(<Reports />);
-  const [timer, setTimer] = useState('sidebar__button');
-  const [reports, setReports] = useState('sidebar__button active');
+  const [timer, setTimer] = useState('');
+  const [reports, setReports] = useState('sidebar__active');
 
   const reportsHandler = () => {
-    setTimer('sidebar__button');
-    setReports('sidebar__button__active');
+    setTimer('sidebar__desactive');
+    setReports('sidebar__active');
     setShow(<Reports />);
   };
   const timerHandler = () => {
-    setTimer('sidebar__button__active');
-    setReports('sidebar__button');
+    setTimer('sidebar__active');
+    setReports('sidebar__desactive');
     setShow(<Timer />);
   };
   return (
     <div className="home">
       <div className="sidebar">
         <ClockDark className="sidebar__clock" />
-        <button type="submit" className={timer} onClick={timerHandler}>
+        <button type="submit" className={`sidebar__button ${timer}`} onClick={timerHandler}>
           Timer
         </button>
-        <button type="submit" className={reports} onClick={reportsHandler}>
-          Reports
+        <button type="submit" className={`sidebar__button ${reports}`} onClick={reportsHandler}>
+          Report
         </button>
       </div>
       <div className="home__content">
