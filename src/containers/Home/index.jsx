@@ -1,19 +1,42 @@
-import React from 'react';
-import { ReactComponent as NeoCoastLogo } from 'Assets/neocoast-logo.svg';
+import React, { useState } from 'react';
+
+import Reports from 'Components/Reports';
+import Timer from 'Components/Timer';
 import privateRoute from 'Hocs/privateRoute';
+
+import { ReactComponent as ClockDark } from 'Assets/clockDark.svg';
 
 import './index.scss';
 
 function Home() {
+  const [show, setShow] = useState(<Reports />);
+  const [timer, setTimer] = useState('');
+  const [reports, setReports] = useState('sidebar__active');
+
+  const reportsHandler = () => {
+    setTimer('sidebar__desactive');
+    setReports('sidebar__active');
+    setShow(<Reports />);
+  };
+  const timerHandler = () => {
+    setTimer('sidebar__active');
+    setReports('sidebar__desactive');
+    setShow(<Timer />);
+  };
   return (
     <div className="home">
-      <NeoCoastLogo width={300} />
-      <h1>
-        Welcome to the Home page of your React App
-      </h1>
-      <h5>
-        Boilerplate made with <span role="img" aria-label="love">♥️</span> by <a href="https://www.neocoast.com" target="_blank" rel="nofollow">NeoCoast</a>
-      </h5>
+      <div className="sidebar">
+        <ClockDark className="sidebar__clock" />
+        <button type="submit" className={`sidebar__button ${timer}`} onClick={timerHandler}>
+          Timer
+        </button>
+        <button type="submit" className={`sidebar__button ${reports}`} onClick={reportsHandler}>
+          Report
+        </button>
+      </div>
+      <div className="home__content">
+        {show}
+      </div>
     </div>
   );
 }
