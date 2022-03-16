@@ -1,0 +1,74 @@
+@import "Constants/colors.scss";
+@import "Constants/fonts.scss";
+
+body {
+  height: 100vh;
+}
+
+#mount {
+  height: 100%;
+}
+
+.home {
+  display: flex;
+  height: 100%;
+
+  &__content{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+  }
+}
+
+.sidebar {
+  align-items: center;
+  background-color: $background_sidebar;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 170px;
+
+  &__button {
+    align-items: center;
+    background-color: $background_sidebar;
+    border: none;
+    border-radius: 23px;
+    color: $white;
+    cursor: pointer;
+    display: flex;
+    font-family: $Roboto;
+    font-size: 18px;
+    justify-content: center;
+    letter-spacing: 1px;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 10px 0;
+    width: 80%;
+    animation-duration: 3s;
+    animation-name: button;
+  
+
+@keyframes slidein {
+  from {
+    opacity: 0%;
+    width: 80%
+  }
+
+  to {
+    opacity: 100%;
+    width: 100%;
+  }
+}
+
+    &__active{
+      background-color: $button_blue;
+      width: 100%;
+    }
+  }
+
+  &__clock {
+    margin: 20% 0;
+  }
+}

@@ -1,0 +1,117 @@
+@import "Constants/colors.scss";
+@import "Constants/fonts.scss";
+
+body {
+  background-image: $background_general;
+}
+
+.sign-in {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__neo {
+    color: $font_neo;
+    font-family: $Roboto;
+    font-size: 21px;
+    letter-spacing: 3.42px;
+  }
+
+  &__tracker {
+    color: $font_tracker;
+    margin-left: 2px;
+  }
+
+  &__container {
+    align-items: center;
+    background-color: $white;
+    border-radius: 15px;
+    box-shadow: $shadow_sign;
+    display: flex;
+    flex-basis: 500px;
+    flex-direction: column;
+    margin-top: 30px;
+    max-height: 400px;
+    padding: 60px;
+    width: 400px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  list-style-type: none;
+  padding: 20px;
+  width: 100%;
+
+  &__div {
+    align-items: stretch;
+    display: flex;
+    height: 100px;
+    justify-content: stretch;
+  }
+
+  &__word {
+    color: $font_blue;
+    font-family: $Roboto;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    padding-left: 5px;
+  }
+
+  &__input {
+    border: none;
+    border-radius: 15px;
+    box-shadow: $shadow_input;
+    display: flex;
+    flex-basis: 700px;
+    font-family: $Roboto;
+    font-size: 20px;
+    margin-bottom: 10%;
+    margin-left: 2%;
+    max-height: 60px;
+    max-width: 500px;
+    min-height: 40px;
+    min-width: 250px;
+    outline: none;
+    padding-left: 2%;
+    position: relative;
+  }
+
+  &__neocoast {
+    color: $input_neocoast;
+    font-family: $Roboto;
+    font-size: 20px;
+    margin-left: 240px;
+    margin-top: 18px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__button {
+    align-items: center;
+    background-color: $button_blue;
+    border: none;
+    border-radius: 29.5px;
+    color: $white;
+    display: flex;
+    font-family: $Roboto;
+    font-size: 21px;
+    justify-content: center;
+    padding: 10px 20px;
+    width: 50%;
+  }
+}
+
+.clock {
+  margin-left: 25px;
+}
+
+.error {
+  align-items: flex-start;
+  color: $error;
+  min-height: 60px;
+}
