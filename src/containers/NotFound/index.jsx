@@ -1,4 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import Reports from 'Components/Reports';
+import Timer from 'Components/Timer';
+import privateRoute from 'Hocs/privateRoute';
+
+import { ReactComponent as ClockDark } from 'Assets/clockDark.svg';
 
 import './index.scss';
 
