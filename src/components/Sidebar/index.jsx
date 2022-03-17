@@ -1,4 +1,3 @@
-/* eslint-disable react/function-component-definition */
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -28,7 +27,11 @@ const Sidebar = () => {
     <div className="sidebar">
       <ClockDark className="sidebar__clock" />
       {items.map((item) => (
-        <button type="submit" className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'} onClick={() => navigate(item.path)}>
+        <button
+          type="submit"
+          className={item.path === location.pathname ? 'sidebar__button--active' : 'sidebar__button--inactive'}
+          onClick={() => navigate(item.path)}
+        >
           {item.label}
         </button>
       ))}

@@ -1,5 +1,16 @@
+@import "Constants/colors.scss";
+
 html,
 body {
   margin: 0;
   padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-image: $background_general;
+}
+
+#mount {
+  height: 100%;
 }
