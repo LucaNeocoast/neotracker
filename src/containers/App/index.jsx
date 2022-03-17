@@ -5,7 +5,8 @@ import {
   Routes,
 } from 'react-router-dom';
 import { ROUTES } from 'Data/constants';
-import Home from 'Containers/Home';
+import Timer from 'Containers/Timer';
+import Reports from 'Containers/Reports';
 import SignIn from 'Containers/SignIn';
 import NotFound from 'Containers/NotFound';
 
@@ -15,7 +16,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path={ROUTES.home} element={<Home />} />
+        <Route exact path={ROUTES.timer} element={<Timer />} />
+        <Route exact path={ROUTES.report} element={<Reports />} />
         <Route exact path={ROUTES.signIn} element={<SignIn />} />
         <Route element={NotFound} />
       </Routes>
