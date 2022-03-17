@@ -2,5 +2,6 @@
 
 export const ROUTES = {
   signIn: '/sign-in',
-  home: '/',
+  report: '/report',
+  timer: '/timer',
 };
