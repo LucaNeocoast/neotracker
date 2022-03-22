@@ -1,16 +1,28 @@
-/* eslint-disable react/function-component-definition */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ROUTES } from 'Data/constants';
+import { logOut } from 'Axios/Axios';
 
 import { ReactComponent as ClockDark } from 'Assets/clockDark.svg';
+import { ReactComponent as Exit } from 'Assets/exit.svg';
 
 import './index.scss';
 
 const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const logOutHandler = () => {
+    logOut().then(() => {
+      localStorage.removeItem('uid');
+      localStorage.removeItem('client');
+      localStorage.removeItem('expiry');
+      localStorage.removeItem('accessToken');
+      navigate(ROUTES.signIn);
+    });
+  };
 
   const items = [
     {
@@ -32,6 +44,9 @@ const Sidebar = () => {
           {item.label}
         </button>
       ))}
+      <div className="sidebar__logOut" role="button" onClick={logOutHandler}>
+        Log out <Exit />
+      </div>
     </div>
   );
 };

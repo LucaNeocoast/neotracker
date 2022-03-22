@@ -32,6 +32,19 @@
       width: 80%;
     }
 
+    &__logOut{
+      align-items: center;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      font-family: $Roboto;
+      font-size: 18px;
+      justify-content: space-between;
+      position: relative;
+      top: 65%;
+      width: 55%;
+    }
+
     .active{
       animation-duration: 2s;
       animation-name: active;

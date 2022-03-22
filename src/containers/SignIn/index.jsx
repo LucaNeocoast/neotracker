@@ -9,7 +9,7 @@ import { signIn } from 'Axios/Axios';
 
 import './index.scss';
 
-function SignIn() {
+const SignIn = () => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [error, setError] = useState('');
@@ -17,7 +17,11 @@ function SignIn() {
 
   const signInHandler = () => {
     signIn(`${email}@neocoast.com`, pass).then((response) => {
+      console.log(response.headers)
       localStorage.setItem('uid', response.data.data.uid);
+      localStorage.setItem('accessToken', response.headers['access-token']);
+      localStorage.setItem('expiry', response.headers.expiry);
+      localStorage.setItem('client', response.headers.client);
       setError('');
       navigate(ROUTES.report);
     }).catch((err) => {
@@ -58,6 +62,6 @@ function SignIn() {
       </div>
     </div>
   );
-}
+};
 
 export default publicRoute(SignIn);

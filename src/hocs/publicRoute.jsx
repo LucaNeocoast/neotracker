@@ -6,7 +6,7 @@ export default (Component) => (
   // eslint-disable-next-line func-names
   function () {
     if (localStorage.getItem('uid')) {
-      return (<Navigate to={ROUTES.report} />);
+      return (<Navigate to={ROUTES.timer} />);
     }
 
     return <Component />;
