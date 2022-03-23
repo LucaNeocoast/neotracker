@@ -5,13 +5,13 @@ import { ReactComponent as Clock } from 'Assets/clock.svg';
 
 import { ROUTES } from 'Data/constants';
 import publicRoute from 'Hocs/publicRoute';
-import { signIn } from 'Axios/Axios';
+import { signIn } from 'Axios/axios';
 
 import './index.scss';
 
 const SignIn = () => {
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+  const [email, setEmail] = useState('test_employee');
+  const [pass, setPass] = useState('password');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const SignIn = () => {
       localStorage.setItem('expiry', response.headers.expiry);
       localStorage.setItem('client', response.headers.client);
       setError('');
-      navigate(ROUTES.report);
+      navigate(ROUTES.timer);
     }).catch((err) => {
       setEmail('');
       setPass('');

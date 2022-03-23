@@ -3,7 +3,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ROUTES } from 'Data/constants';
-import { logOut } from 'Axios/Axios';
+import { logOut } from 'Axios/axios';
 
 import { ReactComponent as ClockDark } from 'Assets/clockDark.svg';
 import { ReactComponent as Exit } from 'Assets/exit.svg';
@@ -24,6 +24,11 @@ const Sidebar = () => {
     });
   };
 
+  const clear = () => {
+    localStorage.clear();
+    navigate(ROUTES.signIn);
+  };
+
   const items = [
     {
       label: 'timer',
@@ -38,9 +43,9 @@ const Sidebar = () => {
   ];
   return (
     <div className="sidebar">
-      <ClockDark className="sidebar__clock" />
+      <ClockDark onClick={clear} className="sidebar__clock" />
       {items.map((item) => (
-        <button type="submit" className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'} onClick={() => navigate(item.path)}>
+        <button type="submit" className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'} onClick={logOutHandler}>
           {item.label}
         </button>
       ))}
