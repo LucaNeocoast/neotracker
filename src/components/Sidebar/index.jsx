@@ -27,7 +27,7 @@ const Sidebar = () => {
   ];
   return (
     <div className="sidebar">
-      <ClockDark className="sidebar__clock" />
+      <ClockDark onClick={clear} className="sidebar__clock" />
       {items.map((item) => (
         <button
           type="submit"
