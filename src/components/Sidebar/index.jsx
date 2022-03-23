@@ -16,12 +16,13 @@ const Sidebar = () => {
 
   const logOutHandler = () => {
     logOut().then(() => {
-      localStorage.removeItem('uid');
-      localStorage.removeItem('client');
-      localStorage.removeItem('expiry');
-      localStorage.removeItem('accessToken');
       navigate(ROUTES.signIn);
     });
+  };
+
+  const clear = () => {
+    localStorage.clear();
+    navigate(ROUTES.signIn);
   };
 
   const items = [
@@ -36,9 +37,10 @@ const Sidebar = () => {
       path: ROUTES.report,
     },
   ];
+
   return (
     <div className="sidebar">
-      <ClockDark className="sidebar__clock" />
+      <ClockDark onClick={clear} className="sidebar__clock" />
       {items.map((item) => (
         <button type="submit" className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'} onClick={() => navigate(item.path)}>
           {item.label}
