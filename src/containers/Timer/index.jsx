@@ -22,7 +22,9 @@ const Timer = () => {
       <Sidebar />
       <div className="timer__container">
         <div className="timer__container-content">
-          {!isFetchingHistory ? <DaysLists days={history} /> : <div />}
+          <div className="timer__container-rectangle"></div>
+          <div className="timer__container-history">TRACKING HISTORY</div>
+          {!isFetchingHistory ? <DaysLists className="prueba" days={history} /> : <div />}
         </div>
       </div>
     </div>

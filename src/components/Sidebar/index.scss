@@ -2,12 +2,13 @@
 @import "Constants/fonts.scss";
 
 .sidebar {
-    align-items: center;
-    background-color: $background_sidebar;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 170px;
+  position: fixed;
+  align-items: center;
+  background-color: $background_sidebar;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 170px;
 
     &__clock {
       margin: 20% 0;

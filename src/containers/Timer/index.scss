@@ -19,15 +19,36 @@ body {
     justify-content: center;
     width: 100%;
 
+    &-history {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      color: $font_grey;
+      font-family: $Roboto;
+      letter-spacing: 2.05px;
+      font-size: 12px;
+      margin-top: 30px;
+    }
 
-  &-content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    font-family: $Roboto;
-    justify-content: center;
-    width: 100%;
-    margin: 0 20%;
+    &-rectangle {
+      min-height: 150px;
+      width: 100%;
+      border-radius: 15px;
+      background-color: $white;
+      box-shadow: $shadow_sign;
+    }
+
+    &-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-family: $Roboto;
+      flex-direction: column;
+      width: 100%;
+      margin-right: 20%;
+      margin-left: 30%;
+      margin-top: 50px;
+      overflow-y: visible;
     }
   }
 }

@@ -8,6 +8,7 @@ import { minutesToHours } from 'date-fns/esm';
 import { ReactComponent as ArrowRigth } from 'Assets/arrow-rigth.svg';
 import { ReactComponent as ArrowDown } from 'Assets/arrow-down.svg';
 
+import './index.scss';
 
 const Project = ({
   tags, color, name, trackedTime,
@@ -29,13 +30,19 @@ const Project = ({
   }, []);
 
   return (
-    <div className="post-home">
-      <div className="content-home__name">{tags.tracked_time}</div>
-      <div className="content-home__date">{`${minutesToHours(trackedTime)}:${minutes}`}</div>
-
-      {open ? (<><ArrowDown onClick={opening} /> <TagsList tags={tags} /></>) : <ArrowRigth onClick={opening} />}
-      <div>{color}</div>
-      <div>{name}</div>
+    <div>
+      <div className="project">
+        <div className="project__container">
+          <div className="project__container-box">
+            {open ? (<ArrowDown onClick={opening} />) : <ArrowRigth onClick={opening} />}
+            <div className="project__container-point" style={{ backgroundColor: color }} />
+            <div>{name}</div>
+          </div>
+          <div className="project__time">{trackedTime > 0 ? `${minutesToHours(trackedTime)}:${minutes}` : '0:0'}</div>
+        </div>
+      </div>
+      <div className="project__line" />
+      {open && <TagsList tags={tags} />}
     </div>
   );
 };
