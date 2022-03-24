@@ -8,11 +8,11 @@ import ProjectsLists from 'Components/ProjectsLists';
 import './index.scss';
 
 const Day = ({ date, projects }) => (
-  <div className="project">
-    <div clssName="project__content">
-      <div className="project__container">
-        <div className="project__content-date">{format(new Date(date), 'dd do, MMMM yyyy')}</div>
-        <div className="project__content-line" />
+  <div className="day">
+    <div clssName="day__content">
+      <div className="day__container">
+        <div className="day__content-date">{format(new Date(date), 'eee do, MMMM yyyy')}</div>
+        <div className="day__content-line" />
       </div>
     </div>
     <ProjectsLists projects={projects} />
