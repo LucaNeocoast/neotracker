@@ -2,6 +2,7 @@
 @import "Constants/fonts.scss";
 
 .sidebar {
+  position: fixed;
   align-items: center;
   background-color: $background_sidebar;
   display: flex;

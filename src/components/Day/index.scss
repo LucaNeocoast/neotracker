@@ -1,8 +1,9 @@
 @import "Constants/colors.scss";
 @import "Constants/fonts.scss";
 
-.project {
+.day {
   width: 100%;
+  margin: 20px 0;
 
   &__container{
     display: flex;
