@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ReactComponent as Clock } from 'Assets/clock.svg';
 
 import publicRoute from 'Hocs/publicRoute';
+
 import { signIn } from 'Axios/Axios';
 
 import './index.scss';
@@ -43,7 +44,7 @@ function SignIn() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <li className="sign-in__form-word">Password:</li>
+          <li className="sign-in__form-label">Password:</li>
           <input
             className="sign-in__form-input"
             type="password"
