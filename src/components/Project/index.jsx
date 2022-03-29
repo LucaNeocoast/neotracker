@@ -13,7 +13,6 @@ import './index.scss';
 const Project = ({
   tags, color, name, trackedTime,
 }) => {
-  console.log(tags);
   const [minutes, setMinutes] = useState('');
   const [open, setOpen] = useState(false);
 
