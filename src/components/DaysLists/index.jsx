@@ -3,24 +3,22 @@ import React from 'react';
 import Day from 'Components/Day';
 import PropTypes from 'prop-types';
 
-const DaysLists = ({ days }) => {
-  console.log(days);
-  return (
-    <>
-      {
-        days.map(({
-          date, projects, tracked_time,
-        }) => (
-          <Day
-            date={date}
-            projects={projects}
-            trackedTime={tracked_time}
-          />
-        ))
-      }
-    </>
-  );
-};
+const DaysLists = ({ days }) => (
+  <>
+    {
+      days.map(({
+        date, projects, tracked_time,
+      }) => (
+        <Day
+          date={date}
+          projects={projects}
+          trackedTime={tracked_time}
+        />
+      ))
+    }
+  </>
+);
+
 
 DaysLists.propTypes = {
   days: PropTypes.arrayOf(
