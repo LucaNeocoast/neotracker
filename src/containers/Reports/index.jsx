@@ -9,7 +9,7 @@ const reports = () => (
   <div className="reports">
     <Sidebar />
     <div className="reports__content">
-      soy los reports <span className="reports__content--wi">WIIIIIIIIIIIIIIIIIII</span>!!!!!!!!
+      r
     </div>
   </div>
 );
