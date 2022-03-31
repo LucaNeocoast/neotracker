@@ -27,20 +27,14 @@ const Tag = ({
     setMinutes(Math.round(diference - (60 * (minutesToHours(diference)))));
   }, [diference]);
 
-  const opening = () => {
-    if (!open) {
-      setOpen(true);
-    } else {
-      setOpen(false);
-    }
-  };
+  const opening = () => setOpen(!open);
 
   return (
     <div>
       <div className="tag">
         <div className="tag__container">
           <div className="tag__container-box">
-            {open ? (<ArrowDown onClick={opening} />) : <ArrowRigth onClick={opening} />}
+            {open ? <ArrowDown onClick={opening} /> : <ArrowRigth onClick={opening} />}
             <div className="tag__container-point" style={{ backgroundColor: color }} />
             <div>{name}</div>
           </div>
@@ -52,7 +46,12 @@ const Tag = ({
         </div>
       </div>
       <div className="tag__line" />
-      {open && <><EntriesLists entries={entries} /><div className="tag__empty" /></>}
+      {open && (
+        <>
+          <EntriesLists entries={entries} />
+          <div className="tag__empty" />
+        </>
+      )}
     </div>
   );
 };

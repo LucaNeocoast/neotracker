@@ -11,18 +11,15 @@ import { ReactComponent as ArrowDown } from 'Assets/arrow-down.svg';
 import './index.scss';
 
 const Project = ({
-  tags, color, name, trackedTime,
+  tags,
+  color,
+  name,
+  trackedTime,
 }) => {
   const [minutes, setMinutes] = useState('');
   const [open, setOpen] = useState(false);
 
-  const opening = () => {
-    if (!open) {
-      setOpen(true);
-    } else {
-      setOpen(false);
-    }
-  };
+  const opening = () => setOpen(!open);
 
   useEffect(() => {
     setMinutes(Math.round(trackedTime - (60 * (minutesToHours(trackedTime)))));
@@ -33,7 +30,7 @@ const Project = ({
       <div className="project">
         <div className="project__container">
           <div className="project__container-box">
-            {open ? (<ArrowDown onClick={opening} />) : <ArrowRigth onClick={opening} />}
+            {open ? <ArrowDown onClick={opening} /> : <ArrowRigth onClick={opening} />}
             <div className="project__container-point" style={{ backgroundColor: color }} />
             <div>{name}</div>
           </div>
