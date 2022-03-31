@@ -47,13 +47,16 @@ const Sidebar = () => {
           <button
             type="submit"
             className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'}
-            onClick={logOutHandler}
+            onClick={() => navigate(item.path)}
           >
             {item.label}
             {item.icon}
           </button>
         ))}
       </div>
+      <button className="sidebar__logOut" type="submit" onClick={logOutHandler}>
+        Log out <Exit className="sidebar__logOut-exit" />
+      </button>
     </div>
   );
 };
