@@ -1,7 +1,8 @@
+/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://admin-stg.neocoast.com/api/v1/',
+  baseURL: `${process.env.API_URL}api/v1/`,
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -13,6 +14,6 @@ const signIn = (email, password) => api.post(
   }
 );
 
-export default {
+export {
   signIn,
 };
