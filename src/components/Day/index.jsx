@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { format } from 'date-fns';
-
 import PropTypes from 'prop-types';
+
 import ProjectsLists from 'Components/ProjectsLists';
 
 import './index.scss';

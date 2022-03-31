@@ -13,7 +13,12 @@ const signIn = (email, password) => api.post(
     email,
     password,
   }
-);
+).then((response) => {
+  localStorage.setItem('uid', response.data.data.uid);
+  localStorage.setItem('accessToken', response.headers['access-token']);
+  localStorage.setItem('expiry', response.headers.expiry);
+  localStorage.setItem('client', response.headers.client);
+});
 
 const logOut = () => {
   const {
@@ -22,6 +27,11 @@ const logOut = () => {
     accessToken,
     expiry,
   } = getUserData();
+  localStorage.removeItem('uid');
+  localStorage.removeItem('client');
+  localStorage.removeItem('expiry');
+  localStorage.removeItem('accessToken');
+
   return api.delete(
     'auth/sign_out',
     {
@@ -43,7 +53,8 @@ const entries = () => {
     accessToken,
     expiry,
   } = getUserData();
-  return (api.get(
+
+  return api.get(
     'entries_data',
     {
       headers: {
@@ -57,7 +68,6 @@ const entries = () => {
         timezone: 'America/Montevideo',
       },
     }
-  )
   );
 };
 

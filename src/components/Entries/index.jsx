@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
 import { format, differenceInMinutes } from 'date-fns';
 import { minutesToHours } from 'date-fns/esm';
-
 import PropTypes from 'prop-types';
 
 import './index.scss';
@@ -15,8 +13,8 @@ const Entries = ({ description, finishDate, initialDate }) => {
     setDiference(differenceInMinutes(new Date(finishDate), new Date(initialDate)));
     setMinutes(Math.round(diference - (60 * (minutesToHours(diference)))));
   }, [diference]);
-  return (
 
+  return (
     <div className="entries">
       <div className="entries__name">{description}</div>
       <div className="entries__container">
@@ -27,6 +25,7 @@ const Entries = ({ description, finishDate, initialDate }) => {
     </div>
   );
 };
+
 Entries.propTypes = {
   description: PropTypes.string.isRequired,
   finishDate: PropTypes.string.isRequired,

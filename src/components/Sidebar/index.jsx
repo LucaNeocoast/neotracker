@@ -18,13 +18,10 @@ const Sidebar = () => {
 
   const logOutHandler = () => {
     logOut().then(() => {
-      localStorage.removeItem('uid');
-      localStorage.removeItem('client');
-      localStorage.removeItem('expiry');
-      localStorage.removeItem('accessToken');
       navigate(ROUTES.signIn);
     });
   };
+
   const clear = () => {
     localStorage.clear();
   };
@@ -41,20 +38,22 @@ const Sidebar = () => {
       path: ROUTES.report,
     },
   ];
+
   return (
     <div className="sidebar">
       <ClockDark className="sidebar__clock" onClick={clear} />
       <div className="sidebar__container">
         {items.map((item) => (
-          <button type="submit" className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'} onClick={() => navigate(item.path)}>
+          <button
+            type="submit"
+            className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'}
+            onClick={logOutHandler}
+          >
             {item.label}
             {item.icon}
           </button>
         ))}
       </div>
-      <button className="sidebar__logOut" type="button" onClick={logOutHandler}>
-        Log out <Exit className="sidebar__logOut-exit" />
-      </button>
     </div>
   );
 };

@@ -7,7 +7,9 @@ const ProjectsLists = ({ projects }) => (
   <div>
     {
       projects.map(({
-        tags, project, tracked_time,
+        tags,
+        project,
+        tracked_time,
       }) => (
         <Project
           tags={tags}

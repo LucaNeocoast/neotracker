@@ -1,7 +1,6 @@
 @import "Constants/colors.scss";
 @import "Constants/fonts.scss";
 
-
 @media (min-width: 900px) {
 
   .sidebar {
@@ -51,28 +50,30 @@
         margin-left: 15%;
       }
 
-      &__logOut {
-        align-items: center;
-        border: none;
-        border-radius: 23px;
-        color: $white;
-        cursor: pointer;
-        display: flex;
-        font-family: $Roboto;
-        font-size: 18px;
-        justify-content: space-between;
-        position: relative;
-        top: 65%;
-        width: 55%;
-      }
+    &__logOut {
+      background-color: transparent;
+      border: 0;
+      align-items: center;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      font-family: $Roboto;
+      font-size: 18px;
+      justify-content: space-between;
+      position: relative;
+      top: 65%;
+      width: 55%;
+      background-color: transparent;
+      border: none;
+    }
 
-      .active {
-        animation-duration: 2s;
-        animation-name: active;
-        background-color: $button_blue;
-        opacity: 100%;
-        width: 100%;
-      }
+    .active {
+      animation-duration: 2s;
+      animation-name: active;
+      background-color: $button_blue;
+      opacity: 100%;
+      width: 100%;
+    }
 
       .inactive {
         animation-duration: 0.8s;
@@ -200,6 +201,8 @@
     }
 
     &__logOut {
+      background-color: transparent;
+      border: 0;
       align-items: center;
       color: $font_grey;
       cursor: pointer;
@@ -242,8 +245,6 @@
       fill: $white;
     }
   }
-
-
 
   @keyframes close {
     from {
