@@ -70,7 +70,6 @@
         animation-duration: 2s;
         animation-name: active;
         background-color: $button_blue;
-        margin-left: 40%;
         opacity: 100%;
         width: 100%;
       }
@@ -127,7 +126,6 @@
 
   to {
     background-color: $button_blue;
-    margin-left: 40%;
     width: 100%;
   }
 }
@@ -135,7 +133,6 @@
 @keyframes inactive {
   from {
     background-color: $button_blue;
-    margin-left: 40%;
     width: 100%;
   }
 
@@ -158,11 +155,11 @@
     justify-content: space-between;
 
     &__clock {
-      margin-bottom: 5%;
       position: absolute;
       margin-left: 40%;
       width: 90px;
       height: 70px;
+      margin-bottom: 20px;
     }
 
     &__container {
