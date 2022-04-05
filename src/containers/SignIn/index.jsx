@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 import { ReactComponent as Clock } from 'Assets/clock.svg';
 
+import { ROUTES } from 'Data/constants';
 import publicRoute from 'Hocs/publicRoute';
 import { signIn } from 'Axios/Axios';
 
 import './index.scss';
 
-function SignIn() {
+const SignIn = () => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [error, setError] = useState('');
@@ -18,7 +19,7 @@ function SignIn() {
     signIn(`${email}@neocoast.com`, pass).then((response) => {
       localStorage.setItem('uid', response.data.data.uid);
       setError('');
-      navigate('/');
+      navigate(ROUTES.report);
     }).catch((err) => {
       setEmail('');
       setPass('');
@@ -57,6 +58,6 @@ function SignIn() {
       </div>
     </div>
   );
-}
+};
 
 export default publicRoute(SignIn);
