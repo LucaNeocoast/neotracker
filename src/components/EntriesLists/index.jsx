@@ -1,13 +1,17 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import Entries from 'Components/Entries';
+
 import PropTypes from 'prop-types';
 
 const EntriesLists = ({ entries }) => (
   <div>
     {
       entries.map(({
-        description, finish_date, id, initial_date,
+        description,
+        finish_date,
+        id,
+        initial_date,
       }) => (
         <Entries
           description={description}

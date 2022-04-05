@@ -43,16 +43,19 @@ const Sidebar = () => {
     <div className="sidebar">
       <ClockDark className="sidebar__clock" onClick={clear} />
       <div className="sidebar__container">
-        {items.map((item) => (
-          <button
-            type="submit"
-            className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'}
-            onClick={() => navigate(item.path)}
-          >
-            {item.label}
-            {item.icon}
-          </button>
-        ))}
+
+        {
+          items.map((item) => (
+            <button
+              type="submit"
+              className={item.path === location.pathname ? 'sidebar__button active' : 'sidebar__button inactive'}
+              onClick={() => navigate(item.path)}
+            >
+              {item.label}
+              {item.icon}
+            </button>
+          ))
+        }
       </div>
       <button className="sidebar__logOut" type="submit" onClick={logOutHandler}>
         Log out <Exit className="sidebar__logOut-exit" />

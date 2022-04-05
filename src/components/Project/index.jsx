@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
-import TagsList from 'Components/TagsList';
+import { minutesToHours } from 'date-fns/esm';
 import PropTypes from 'prop-types';
 
-import { minutesToHours } from 'date-fns/esm';
+import TagsList from 'Components/TagsList';
 
 import { ReactComponent as ArrowRigth } from 'Assets/arrow-rigth.svg';
 import { ReactComponent as ArrowDown } from 'Assets/arrow-down.svg';

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
-import EntriesLists from 'Components/EntriesLists';
+import { minutesToHours } from 'date-fns/esm';
+import { format, differenceInMinutes } from 'date-fns';
 import PropTypes from 'prop-types';
 
-import { format, differenceInMinutes } from 'date-fns';
+import EntriesLists from 'Components/EntriesLists';
 
 import { ReactComponent as ArrowRigth } from 'Assets/arrow-rigth.svg';
 import { ReactComponent as ArrowDown } from 'Assets/arrow-down.svg';
-
-import { minutesToHours } from 'date-fns/esm';
 
 import './index.scss';
 
@@ -17,15 +15,15 @@ const Tag = ({
 }) => {
   const [open, setOpen] = useState(false);
   const [minutes, setMinutes] = useState('');
-  const [diference, setDiference] = useState('');
+  const [difference, setDifference] = useState('');
 
   useEffect(() => {
-    setDiference(differenceInMinutes(
+    setDifference(differenceInMinutes(
       new Date(entries[entries.length - 1].finish_date),
       new Date(entries[0].initial_date)
     ));
-    setMinutes(Math.round(diference - (60 * (minutesToHours(diference)))));
-  }, [diference]);
+    setMinutes(Math.round(difference - (60 * (minutesToHours(difference)))));
+  }, [difference]);
 
   const opening = () => setOpen(!open);
 
@@ -41,17 +39,19 @@ const Tag = ({
           <div className="tag__container-times">
             <div className="tag__container-time">{format(new Date(entries[0].initial_date), 'hh:mm a')} - </div>
             <div className="tag__container-time">{format(new Date(entries[entries.length - 1].finish_date), 'hh:mm a')}</div>
-            <div className="tag__container-total">{diference > 0 ? `${minutesToHours(diference)}:${minutes}` : '0:0'}</div>
+            <div className="tag__container-total">{difference > 0 ? `${minutesToHours(difference)}:${minutes}` : '0:0'}</div>
           </div>
         </div>
       </div>
       <div className="tag__line" />
-      {open && (
-        <>
-          <EntriesLists entries={entries} />
-          <div className="tag__empty" />
-        </>
-      )}
+      {
+        open && (
+          <>
+            <EntriesLists entries={entries} />
+            <div className="tag__empty" />
+          </>
+        )
+      }
     </div>
   );
 };
