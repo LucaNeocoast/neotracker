@@ -9,7 +9,7 @@ import { signIn } from 'Axios/Axios';
 
 import './index.scss';
 
-function SignIn() {
+const SignIn = () => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [error, setError] = useState('');
@@ -58,6 +58,7 @@ function SignIn() {
       </div>
     </div>
   );
-}
+};
+
 
 export default publicRoute(SignIn);

@@ -2,20 +2,26 @@
 @import "Constants/fonts.scss";
 
 .sidebar {
-    align-items: center;
-    background-color: $background_sidebar;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 170px;
+  align-items: center;
+  background-color: $background_sidebar;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 170px;
 
-    &__clock {
-      margin: 20% 0;
-    }
+  &__clock {
+    margin: 20% 0;
+  }
 
-    &__button {
+  &__button {
+    &--active {
+      animation-duration: 2s;
+      animation-name: active;
+      background-color: $button_blue;
+      margin-left: 60%;
+      opacity: 100%;
+      width: 100%;
       align-items: center;
-      background-color: $background_sidebar;
       border: none;
       border-radius: 23px;
       color: $white;
@@ -25,51 +31,59 @@
       font-size: 18px;
       justify-content: center;
       letter-spacing: 1px;
-      margin-left: 40px;
+
+      margin-right: 20px;
+      margin-top: 20px;
+      padding: 10px 0;
+    }
+
+    &--inactive {
+      background-color: $background_sidebar;
+      animation-duration: 0.8s;
+      animation-name: inactive;
+      align-items: center;
+      border: none;
+      border-radius: 23px;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      font-family: $Roboto;
+      font-size: 18px;
+      justify-content: center;
+      letter-spacing: 1px;
+      margin-left: 25%;
       margin-right: 20px;
       margin-top: 20px;
       padding: 10px 0;
       width: 80%;
     }
-
-    .active{
-      animation-duration: 2s;
-      animation-name: active;
-      background-color: $button_blue;
-      margin-left: 60%;
-      opacity: 100%;
-      width: 100%;
-    }
-
-    .inactive{
-      animation-duration: 0.8s;
-      animation-name: inactive;
-    }
   }
-  @keyframes active {
-    from {
-      background-color: $background_sidebar;
-      margin-left: 25%;
-      width: 80%;
-    }
+}
 
-    to {
-      background-color: $button_blue;
-      margin-left: 60%;
-      width: 100%;
-    }
+@keyframes active {
+  from {
+    background-color: $background_sidebar;
+    margin-left: 25%;
+    width: 80%;
   }
 
-  @keyframes inactive {
-    from {
-      background-color: $button_blue;
-      margin-left: 60%;
-      width: 100%;
-    }
-
-    to {
-      background-color: $background_sidebar;
-      margin-left: 25%;
-      width: 80%;
-    }
+  to {
+    background-color: $button_blue;
+    margin-left: 60%;
+    width: 100%;
   }
+}
+
+@keyframes inactive {
+  from {
+    background-color: $button_blue;
+    margin-left: 60%;
+    width: 100%;
+  }
+
+  to {
+    background-color: $background_sidebar;
+    margin-left: 25%;
+    width: 80%;
+  }
+}
