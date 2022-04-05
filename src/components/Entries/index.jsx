@@ -7,12 +7,12 @@ import './index.scss';
 
 const Entries = ({ description, finishDate, initialDate }) => {
   const [minutes, setMinutes] = useState('');
-  const [diference, setDiference] = useState('');
+  const [difference, setDifference] = useState('');
 
   useEffect(() => {
-    setDiference(differenceInMinutes(new Date(finishDate), new Date(initialDate)));
-    setMinutes(Math.round(diference - (60 * (minutesToHours(diference)))));
-  }, [diference]);
+    setDifference(differenceInMinutes(new Date(finishDate), new Date(initialDate)));
+    setMinutes(Math.round(difference - (60 * (minutesToHours(difference)))));
+  }, [difference]);
 
   return (
     <div className="entries">
@@ -20,7 +20,7 @@ const Entries = ({ description, finishDate, initialDate }) => {
       <div className="entries__container">
         <div className="entries__container-time">{format(new Date(initialDate), 'hh:mm a')} - </div>
         <div className="entries__container-time">{format(new Date(finishDate), 'hh:mm a')}</div>
-        <div className="entries__container-total">{diference > 0 ? `${minutesToHours(diference)}:${minutes}` : '0:0'}</div>
+        <div className="entries__container-total">{difference > 0 ? `${minutesToHours(difference)}:${minutes}` : '0:0'}</div>
       </div>
     </div>
   );

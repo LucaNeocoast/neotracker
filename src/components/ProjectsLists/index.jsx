@@ -1,7 +1,8 @@
 /* eslint-disable camelcase */
 import React from 'react';
-import Project from 'Components/Project';
 import PropTypes from 'prop-types';
+
+import Project from 'Components/Project';
 
 const ProjectsLists = ({ projects }) => (
   <div>
