@@ -2,12 +2,12 @@ import axios from 'axios';
 import getUserData from '../helpers';
 
 const api = axios.create({
-  baseURL: `${process.env.API_URL}api/v1/auth/`,
+  baseURL: `${process.env.API_URL}api/v1/`,
   headers: { 'Content-Type': 'application/json' },
 });
 
 const signIn = (email, password) => api.post(
-  'sign_in',
+  'auth/sign_in',
   {
     email,
     password,

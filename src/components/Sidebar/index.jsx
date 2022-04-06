@@ -9,7 +9,6 @@ import { ReactComponent as ClockDark } from 'Assets/clockDark.svg';
 import { ReactComponent as Timer } from 'Assets/timer.svg';
 import { ReactComponent as Report } from 'Assets/report.svg';
 import { ReactComponent as Exit } from 'Assets/exit.svg';
-import { logOut } from 'Axios/axios';
 
 import './index.scss';
 

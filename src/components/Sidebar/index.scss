@@ -164,19 +164,6 @@
       width: 70%;
     }
 
-    .open {
-      animation-duration: 0.8s;
-      animation-name: open;
-      fill: $white;
-    }
-
-    .close {
-      animation-duration: 0.8s;
-      animation-name: close;
-      fill: $background_sidebar;
-      position: absolute;
-    }
-
     &__button {
       align-items: center;
       background-color: $white;
@@ -269,25 +256,25 @@
 
   @keyframes active {
     from {
-      background-color: $background_sidebar;
-      width: 80%;
+      background-color: $white;
+      width: 50px;
     }
 
     to {
       background-color: $button_blue;
-      width: 100%;
+      width: 50%;
     }
   }
 
   @keyframes inactive {
     from {
       background-color: $button_blue;
-      width: 100%;
+      width: 50%;
     }
 
     to {
-      background-color: $background_sidebar;
-      width: 80%;
+      background-color: $white;
+      width: 50px;
     }
   }
 }
