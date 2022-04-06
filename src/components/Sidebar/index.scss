@@ -1,24 +1,34 @@
 @import "Constants/colors.scss";
 @import "Constants/fonts.scss";
 
-.sidebar {
-  align-items: center;
-  background-color: $background_sidebar;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 170px;
+@media (min-width: 900px) {
 
-  &__clock {
-    margin: 20% 0;
-  }
+  .sidebar {
+    position: fixed;
+    align-items: center;
+    background-color: $background_sidebar;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 170px;
 
-  &__button {
-    &--active {
+    &__clock {
+      margin: 20% 0;
+      width: 108px;
+      height: 84px;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10%;
+      width: 100%;
+    }
+
+    &__button {
       animation-duration: 2s;
       animation-name: active;
-      background-color: $button_blue;
-      margin-left: 60%;
+      background-color: $background_sidebar;
       opacity: 100%;
       width: 100%;
       align-items: center;
@@ -29,61 +39,255 @@
       display: flex;
       font-family: $Roboto;
       font-size: 18px;
-      justify-content: center;
+      justify-content: space-around;
       letter-spacing: 1px;
-
       margin-right: 20px;
       margin-top: 20px;
       padding: 10px 0;
+      width: 80%;
+      margin-left: 15%;
     }
 
-    &--inactive {
-      background-color: $background_sidebar;
-      animation-duration: 0.8s;
-      animation-name: inactive;
+    &__logOut {
+      background-color: transparent;
+      border: 0;
       align-items: center;
-      border: none;
-      border-radius: 23px;
       color: $white;
       cursor: pointer;
       display: flex;
       font-family: $Roboto;
       font-size: 18px;
-      justify-content: center;
-      letter-spacing: 1px;
-      margin-left: 25%;
-      margin-right: 20px;
-      margin-top: 20px;
-      padding: 10px 0;
-      width: 80%;
+      justify-content: space-between;
+      position: relative;
+      top: 65%;
+      width: 55%;
+      background-color: transparent;
+      border: none;
+    }
+
+    .active {
+      animation-duration: 2s;
+      animation-name: active;
+      background-color: $button_blue;
+      width: 100%;
+      margin-left: 15%;
+    }
+
+    .inactive {
+      animation-duration: 0.8s;
+      animation-name: inactive;
+    }
+
+    .open {
+      animation-duration: 0.8s;
+      animation-name: open;
+      fill: $white;
+    }
+
+    .close {
+      animation-duration: 0.8s;
+      animation-name: close;
+      fill: $background_sidebar;
+    }
+
+    @keyframes open {
+      from {
+        fill: $background_sidebar;
+      }
+
+      to {
+        fill: $white;
+      }
+    }
+
+
+
+    @keyframes close {
+      from {
+        fill: $white;
+      }
+
+      to {
+        fill: $background_sidebar;
+      }
+    }
+
+    @keyframes active {
+      from {
+        background-color: $background_sidebar;
+        width: 80%;
+        margin-left: 15%;
+      }
+
+      to {
+        background-color: $button_blue;
+        width: 100%;
+      }
+    }
+
+    @keyframes inactive {
+      from {
+        background-color: $button_blue;
+        width: 100%;
+      }
+
+      to {
+        background-color: $background_sidebar;
+        width: 80%;
+        margin-left: 15%;
+      }
     }
   }
 }
 
-@keyframes active {
-  from {
+@media (max-width: 900px) {
+
+  .sidebar {
+    position: fixed;
+    align-items: flex-end;
     background-color: $background_sidebar;
-    margin-left: 25%;
-    width: 80%;
-  }
-
-  to {
-    background-color: $button_blue;
-    margin-left: 60%;
+    display: flex;
+    height: 100px;
     width: 100%;
-  }
-}
+    justify-content: space-between;
 
-@keyframes inactive {
-  from {
-    background-color: $button_blue;
-    margin-left: 60%;
-    width: 100%;
+    &__clock {
+      position: absolute;
+      margin-left: 40%;
+      width: 90px;
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    &__container {
+      display: flex;
+      width: 70%;
+    }
+
+    .open {
+      animation-duration: 0.8s;
+      animation-name: open;
+      fill: $white;
+    }
+
+    .close {
+      animation-duration: 0.8s;
+      animation-name: close;
+      fill: $background_sidebar;
+      position: absolute;
+    }
+
+    &__button {
+      align-items: center;
+      background-color: $white;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      font-family: $Roboto;
+      font-size: 0;
+      justify-content: space-around;
+      letter-spacing: 1px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: -25px;
+      width: 50px;
+      border-radius: 35px;
+      height: 50px;
+    }
+
+    &__logOut {
+      align-items: center;
+      color: $font_grey;
+      cursor: pointer;
+      display: flex;
+      font-family: $Roboto;
+      font-size: 18px;
+      justify-content: center;
+      position: relative;
+      bottom: 65%;
+      width: 30%;
+      margin-right: 20px;
+      background-color: transparent;
+      border: none;
+
+      &-exit {
+        margin-left: 5px;
+      }
+    }
+
+    .active {
+      animation-duration: 2s;
+      animation-name: active;
+      background-color: $button_blue;
+      opacity: 100%;
+      width: 50%;
+      border-radius: 23px;
+      font-size: 18px;
+    }
+
+    .inactive {
+      animation-duration: 0.8s;
+      animation-name: inactive;
+    }
+
+    .open {
+      animation-duration: 0.8s;
+      animation-name: open;
+      fill: $white;
+    }
+
+    .close {
+      animation-duration: 0.8s;
+      animation-name: close;
+      fill: $background_sidebar;
+    }
+
   }
 
-  to {
-    background-color: $background_sidebar;
-    margin-left: 25%;
-    width: 80%;
+  @keyframes open {
+    from {
+      fill: $background_sidebar;
+    }
+
+    to {
+      fill: $white;
+    }
+  }
+
+
+
+  @keyframes close {
+    from {
+      fill: $white;
+    }
+
+    to {
+      fill: $background_sidebar;
+    }
+  }
+
+  @keyframes active {
+    from {
+      background-color: $background_sidebar;
+      width: 80%;
+    }
+
+    to {
+      background-color: $button_blue;
+      width: 100%;
+    }
+  }
+
+  @keyframes inactive {
+    from {
+      background-color: $button_blue;
+      width: 100%;
+    }
+
+    to {
+      background-color: $background_sidebar;
+      width: 80%;
+    }
   }
 }

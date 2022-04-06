@@ -1,0 +1,33 @@
+@import "Constants/colors.scss";
+@import "Constants/fonts.scss";
+
+.day {
+  width: 100%;
+  margin: 20px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content{
+    width: 100%;
+    display: flex;
+
+    &-date {
+      font-family: $Roboto;
+      font-size: 16px;
+      color: $font_blue;
+      font-weight: bold;
+      white-space: nowrap;
+      margin-right: 5px;
+    }
+
+    &-line {
+      width: 100%;
+      height: 2px;
+      background-color: $line_color;
+    }
+  }
+}
