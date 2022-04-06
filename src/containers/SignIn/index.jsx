@@ -16,8 +16,7 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const signInHandler = () => {
-    signIn(`${email}@neocoast.com`, pass).then((response) => {
-      localStorage.setItem('uid', response.data.data.uid);
+    signIn(`${email}@neocoast.com`, pass).then(() => {
       setError('');
       navigate(ROUTES.timer);
     }).catch((err) => {
@@ -59,6 +58,5 @@ const SignIn = () => {
     </div>
   );
 };
-
 
 export default publicRoute(SignIn);
