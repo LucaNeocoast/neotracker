@@ -1,9 +1,9 @@
-/* eslint-disable react/function-component-definition */
-
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ROUTES } from 'Data/constants';
+import { logOut } from 'Axios/axios';
 
 import { ReactComponent as ClockDark } from 'Assets/clockDark.svg';
 import { ReactComponent as Timer } from 'Assets/timer.svg';

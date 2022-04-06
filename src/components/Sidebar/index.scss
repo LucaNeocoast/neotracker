@@ -1,7 +1,6 @@
 @import "Constants/colors.scss";
 @import "Constants/fonts.scss";
 
-
 @media (min-width: 900px) {
 
   .sidebar {
@@ -50,9 +49,9 @@
     }
 
     &__logOut {
+      background-color: transparent;
+      border: 0;
       align-items: center;
-      border: none;
-      border-radius: 23px;
       color: $white;
       cursor: pointer;
       display: flex;
@@ -63,6 +62,7 @@
       top: 65%;
       width: 55%;
       background-color: transparent;
+      border: none;
     }
 
     .active {
@@ -230,11 +230,24 @@
       animation-duration: 0.8s;
       animation-name: inactive;
     }
+
+    .open {
+      animation-duration: 0.8s;
+      animation-name: open;
+      fill: $white;
+    }
+
+    .close {
+      animation-duration: 0.8s;
+      animation-name: close;
+      fill: $background_sidebar;
+    }
+
   }
 
   @keyframes open {
     from {
-      fill: $button_blue;
+      fill: $background_sidebar;
     }
 
     to {
@@ -250,40 +263,31 @@
     }
 
     to {
-      fill: $button_blue;
+      fill: $background_sidebar;
     }
   }
 
   @keyframes active {
     from {
-      background-color: $white;
-      width: 50px;
-      color: $white;
-      font-size: 0;
-
+      background-color: $background_sidebar;
+      width: 80%;
     }
 
     to {
       background-color: $button_blue;
-      width: 50%;
-      font-size: 18px;
-
+      width: 100%;
     }
   }
 
   @keyframes inactive {
     from {
       background-color: $button_blue;
-      width: 50%;
-      font-size: 18px;
-
+      width: 100%;
     }
 
     to {
-      background-color: $white;
-      width: 50px;
-      font-size: 0;
-      color: $white;
+      background-color: $background_sidebar;
+      width: 80%;
     }
   }
 }
